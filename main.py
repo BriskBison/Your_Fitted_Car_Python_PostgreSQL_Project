@@ -2,7 +2,12 @@ import sys
 
 from questa import Questions
 from atton import Check
-from tables import Data
+# from tables import Data
+
+# Note, the tables.py file contains code that creates tables in PostgreSQL and then performs operations on them. 
+# To properly perform these functions, you should connect to your local Postgre and enter the appropriate port and password at the beginning of the tables.py file.
+# I've included instructions in the tables.py file for finding the port in PostgreSQL. The password should be the same as the one you chose when you installed PostgreSQL.
+# If you can do this, please remove the " # " before " tables import Data " so that the program is fully executed and displays the statistics and tables :)
 from numpan import Pando
 import time
 
