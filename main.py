@@ -61,8 +61,8 @@ def engine():
             c.cars6.clear()
             c.cars7.clear()
             c.cars8.clear()
-            c.car_counts = {}
-            c.answered_questions = set()
+            c.car_counts.clear()
+            c.answered_questions.clear()
             for key in q.cars:
                 q.cars[key] = []
             time.sleep(1)
