@@ -56,7 +56,7 @@ class Questions():
 
     def question5(self):
         answer5 = self.ask_question("Do you prefer American or Japanese cars? "
-                                    "Type 'American'/'Japanese' or 'both' ", ["american", "japanese", "both"])
+                                    "Type 'American'/'Japanese', 'neither' or 'both' ", ["american", "japanese", "both", "neither"])
         if answer5 == "american":
             self.cars["Jeep Cherokee"].append(1)
             self.cars["Dodge RAM"].append(1)
@@ -89,7 +89,7 @@ class Questions():
 
     def question6(self):
         answer7 = self.ask_question("Do you prefer German or Japanese cars? "
-                                    "Type 'German'/'Japanese' or 'both' ", ["german", "japanese", "both"])
+                                    "Type 'German'/'Japanese', 'neither' or 'both' ", ["german", "japanese", "both", "neither"])
         if answer7 == "japanese":
             self.cars["Nissan 350z"].append(2)
             self.cars["Toyota Supra"].append(2)
@@ -122,7 +122,7 @@ class Questions():
 
     def question7(self):
         answer9 = self.ask_question("Do you prefer Italian or Japanese cars? "
-                                    "Type 'Italian'/'Japanese' or 'both' ", ["italian", "japanese", "both"])
+                                    "Type 'Italian'/'Japanese', 'neither' or 'both' ", ["italian", "japanese", "both", "neither"])
         if answer9 == "italian":
             self.cars["Enzo Ferrari"].append(4)
             self.cars["Lamborghini Aventador"].append(4)
