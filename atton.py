@@ -19,11 +19,9 @@ class Check():
     cars2 = []
 
     def check(self):
-
         for key, value in q.cars.items():
             if len(value) >= 2:
                 self.cars2.append(key)
-
 
     cars3 = []
 
@@ -33,19 +31,22 @@ class Check():
                 self.cars3.append(key)
 
     cars4 = []
+    answered_questions = set()
 
     def check2(self):
         for feature in self.cars3:
-            while True:
-                try:
-                    answer = input(f"Are you looking for a car which is {feature.replace("_", " ")}? (yes/no) ").lower().strip()
-                    if answer not in ["yes", "no"]:
-                        raise ValueError("Invalid input! Please type 'yes' or 'no'.")
-                    if answer == "yes":
-                        self.cars4.append(feature)
-                    break
-                except ValueError as e:
-                    print(e)
+            if feature not in self.answered_questions:
+                while True:
+                    try:
+                        answer = input(f"Are you looking for a car which is {feature.replace('_', ' ')}? (yes/no) ").lower().strip()
+                        if answer not in ["yes", "no"]:
+                            raise ValueError("Invalid input! Please type 'yes' or 'no'.")
+                        if answer == "yes":
+                            self.cars4.append(feature)
+                        self.answered_questions.add(feature)
+                        break
+                    except ValueError as e:
+                        print(e)
 
     cars5 = []
 
@@ -83,29 +84,27 @@ class Check():
             if len(value) == 2:
                 self.cars8.append(key)
 
-
     def check7(self):
-
         if len(self.cars6) > 1:
-            print(f"Your most fitted cars are: {", ".join(self.cars6)} ")
+            print(f"Your most fitted cars are: {', '.join(self.cars6)} ")
             if len(self.cars7) == 1:
-                print(f"Another good choice for you is {", ".join(self.cars7)} ")
+                print(f"Another good choice for you is {', '.join(self.cars7)} ")
             elif len(self.cars7) > 1:
-                print(f"Cars which are also good for you: {", ".join(self.cars7)}")
+                print(f"Cars which are also good for you: {', '.join(self.cars7)}")
         elif len(self.cars6) == 1:
-            print(f"Your most fitted car is: {", ".join(self.cars6)} ")
+            print(f"Your most fitted car is: {', '.join(self.cars6)} ")
             if len(self.cars7) == 1:
-                print(f"For you, also a good option is: {", ".join(self.cars7)}")
+                print(f"For you, also a good option is: {', '.join(self.cars7)}")
             elif len(self.cars7) > 1:
-                print(f"Cars which are also good for you: {", ".join(self.cars7)}")
+                print(f"Cars which are also good for you: {', '.join(self.cars7)}")
         elif len(self.cars6) == 0:
             if len(self.cars7) == 1:
                 print(f"It is hard to find one perfect car for you. "
-                      f"There is a car which fits you the most: {", ".join(self.cars7)}")
-                print(f"Cars you should also consider {", ".join(self.cars8)}")
+                      f"There is a car which fits you the most: {', '.join(self.cars7)}")
+                print(f"Cars you should also consider: {', '.join(self.cars8)}")
             elif len(self.cars7) > 1:
                 print(f"It is hard to find one perfect car for you. "
-                      f"There are cars which fit you the most: {", ".join(self.cars7)}")
-                print(f"Cars you should also consider {", ".join(self.cars8)}")
+                      f"There are cars which fit you the most: {', '.join(self.cars7)}")
+                print(f"Cars you should also consider: {', '.join(self.cars8)}")
             elif len(self.cars7) == 0 and len(self.cars8) < 2:
                 print(f"Sorry, we couldn't find the best car for you. We don't have enough information")
