@@ -1,3 +1,5 @@
+Hello and welcome :)
+
 I will try to describe the program as briefly as possible
 
 1. main.py = this is the main program file
@@ -10,7 +12,18 @@ I will try to describe the program as briefly as possible
 
 5. numpan.py = this is the file that contains operations in the pandas and matplotlib libraries. Using pandas I display subsequent statistical data in the main.py file, while using matplotlib I display graphs.
 
-The program's operation:
+
+**Here are the steps to follow to properly run the project**
+
+-> To run the program, download all files from github using the git clone command.
+
+-> Then open the code using an IDE and make sure that all libraries are installed
+
+-> Run the program
+
+
+
+**The program's operation:**
 
 The program is designed to select the best car for the user, from the dictionary, which is presented in the questa.py file. At the beginning, the dictionary values ​​are empty lists, and each user answer will add a point to the dictionary or add nothing. In this way, at the end of the program, the car with the most points will be selected (or more than one if there is a draw) and cars that also scored a lot of points will be shown as an alternative for the user.
 
